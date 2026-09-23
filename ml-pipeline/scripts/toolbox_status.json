@@ -1,0 +1,50 @@
+[
+  {
+    "toolbox": "Image Processing Toolbox",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "ml-pipeline (image QA & preprocessing)",
+    "fallback_plan": "OpenCV (cv2) + scikit-image + Albumentations"
+  },
+  {
+    "toolbox": "Computer Vision Toolbox",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "ml-pipeline (feature extraction & detection)",
+    "fallback_plan": "OpenCV + PyTorch Vision (torchvision)"
+  },
+  {
+    "toolbox": "Deep Learning Toolbox",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "ml-pipeline (classification & segmentation)",
+    "fallback_plan": "PyTorch + timm (pretrained backbones: EfficientNet, ConvNeXt, Swin)"
+  },
+  {
+    "toolbox": "Medical Imaging Toolbox",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "ml-pipeline (fundus preprocessing & lesion analysis)",
+    "fallback_plan": "MONAI (Medical Open Network for AI) + SimpleITK"
+  },
+  {
+    "toolbox": "Simulink",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "simulink-model (clinic queueing & throughput)",
+    "fallback_plan": "SimPy (Python discrete-event simulation) / SimEvents"
+  },
+  {
+    "toolbox": "Statistics and Machine Learning Toolbox",
+    "installed": false,
+    "licensed": false,
+    "status": "MISSING",
+    "subsystem": "ml-pipeline / simulink-model (distributions & validation)",
+    "fallback_plan": "scikit-learn + SciPy + NumPy + pandas"
+  }
+]
