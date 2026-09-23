@@ -4,6 +4,7 @@ MATLAB Toolbox Licensing & Environment Verification Runner
 Diabetic Retinopathy Screening Pipeline (SIH Hackathon)
 """
 
+import os
 import sys
 import shutil
 import subprocess
@@ -49,13 +50,28 @@ REQUIRED_TOOLBOXES = [
 ]
 
 def check_matlab_binary():
-    return shutil.which("matlab")
+    which_path = shutil.which("matlab")
+    if which_path:
+        return which_path
+    
+    # Common Windows installation directories
+    candidate_paths = [
+        r"C:\Program Files\MATLAB\R2026a\bin\matlab.exe",
+        r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe",
+        r"C:\Program Files\MATLAB\R2025a\bin\matlab.exe",
+        r"C:\Program Files\MATLAB\R2024b\bin\matlab.exe",
+        r"C:\Program Files\MATLAB\R2024a\bin\matlab.exe",
+    ]
+    for p in candidate_paths:
+        if os.path.exists(p):
+            return p
+    return None
 
 def run_matlab_check(matlab_bin):
     cmd = [
         matlab_bin,
         "-batch",
-        "run('ml-pipeline/scripts/check_toolboxes.m'); exit;"
+        r"run('d:\SIH-DR\ml-pipeline\scripts\check_toolboxes.m');"
     ]
     try:
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
