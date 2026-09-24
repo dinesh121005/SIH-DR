@@ -1,0 +1,29 @@
+{
+  "classes": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "confusion_matrix": [
+    [212, 3, 1, 0, 0],
+    [5, 31, 9, 0, 0],
+    [0, 21, 82, 15, 3],
+    [0, 0, 6, 14, 3],
+    [0, 0, 6, 9, 20]
+  ],
+  "accuracy": 0.816,
+  "qwk": 0.923,
+  "n_val": 440,
+  "referable_dr": {
+    "definition": "grade >= 2",
+    "sensitivity": 0.883,
+    "sensitivity_ratio": "158/179",
+    "specificity": 0.962,
+    "specificity_ratio": "251/261"
+  },
+  "latency_ms_per_image": null,
+  "source": "Kaggle notebook validation split, APTOS 2019, 15% stratified",
+  "note": "Model output for Simulink workflow parameters; latency not yet measured"
+}

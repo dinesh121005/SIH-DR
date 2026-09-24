@@ -1,0 +1,10 @@
+# ==============================================================================
+# DR Screening Referral Operating Points Comparison (SIH-SIMULINK-008)
+# Single-source parameters: simulink-model/scripts/screening_params.m
+# Operating Point A: Default argmax rule (held-out test set, n=366, MEASURED)
+# Operating Point B: Threshold 0.4 on p2+p3+p4 (EXPLORATORY, chosen on test set)
+# Population assumptions: annual_patients = 100000, referable_prevalence = 0.20 (PLACEHOLDER)
+# ==============================================================================
+Operating_Point,Threshold_Rule,Sensitivity,Specificity,AI_Flagged_Referrals_Per_Year,Expected_Missed_Referable_Per_Year,Expected_False_Referrals_Per_Year,Ophthalmologist_Validation_Utilization_Fraction,Ophthalmologist_Total_Utilization_Fraction,Status,Notes
+A,Default argmax (grade >= 2),0.8613,0.9476,21418,2774,4192,0.0372,0.0396,MEASURED,Held-out test set (n=366) default classification rule
+B,Threshold 0.4 on p2+p3+p4,0.9197,0.9389,23285,1606,4891,0.0404,0.0428,EXPLORATORY,Threshold chosen on test set; must be re-chosen on validation data

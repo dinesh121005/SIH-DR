@@ -1,0 +1,54 @@
+{
+  "model_name": "eyeq-quality",
+  "classes": [
+    "Good",
+    "Usable",
+    "Reject"
+  ],
+  "label_mapping_status": "inferred",
+  "input": {
+    "size": [
+      1280,
+      1280
+    ],
+    "channels": 3,
+    "scale": "divide by 255",
+    "imagenet_normalization": false
+  },
+  "architecture": "torchvision vgg16 features[:23] as encoder applied to four 640x640 quadrants; decoder for auxiliary reconstruction; classifier fusing pooled encoder features (7x7) with a 19-feature tabular vector; logits of size 3",
+  "tabular_features": [
+    "total_variation",
+    "brisque",
+    "psnr",
+    "ssim",
+    "multi_scale_ssim",
+    "information_weighted_ssim",
+    "vif_p",
+    "fsim",
+    "srsim",
+    "gmsd",
+    "multi_scale_gmsd",
+    "vsi",
+    "dss",
+    "haarpsi",
+    "mdsi",
+    "vessel_density",
+    "vessel_length",
+    "vessel_contrast",
+    "vessel_sharpness"
+  ],
+  "scaler": {
+    "type": "MinMaxScaler",
+    "fit_on": "full final_metrics.csv with label column dropped",
+    "file": null
+  },
+  "state_dict_prefix_removed": "module.",
+  "selected_checkpoint": {
+    "file": "vista_epoch_11.pth",
+    "epoch": 11,
+    "val_accuracy": 90.00467071461934
+  },
+  "inference_ready": false,
+  "blocker": "needs the 19 precomputed tabular features and the exact 1280px preprocessing used for the zarr dataset; extraction code not in repo",
+  "performance_file": "simulink-model/data/quality_performance.json"
+}

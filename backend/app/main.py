@@ -22,3 +22,9 @@ async def health_check():
         "service": "backend-api",
         "stage": "STAGE 0 — PROJECT DISCOVERY",
     }
+
+from app.api.v1.endpoints.grading import router as grading_router
+from app.api.v1.endpoints.screening import router as screening_router
+
+app.include_router(grading_router, prefix="/api/v1")
+app.include_router(screening_router, prefix="/api/v1")

@@ -109,3 +109,4 @@ simulink-model/sim_output/*
 postgres_data/
 redis_data/
 *.log
+backend/app/ml/quality/weights/*.pth

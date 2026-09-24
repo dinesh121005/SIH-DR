@@ -1,0 +1,78 @@
+{
+  "classes": [
+    "No DR",
+    "Mild",
+    "Moderate",
+    "Severe",
+    "Proliferative DR"
+  ],
+  "confusion_matrix": [
+    [
+      194,
+      3,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      18,
+      10,
+      0,
+      0
+    ],
+    [
+      1,
+      14,
+      59,
+      8,
+      5
+    ],
+    [
+      0,
+      0,
+      6,
+      11,
+      0
+    ],
+    [
+      1,
+      3,
+      9,
+      5,
+      15
+    ]
+  ],
+  "accuracy": 0.8115,
+  "within_one_grade_accuracy": 0.9426,
+  "qwk": 0.8688,
+  "n": 366,
+  "referable_dr": {
+    "definition": "grade >= 2",
+    "sensitivity": 0.8613,
+    "sensitivity_ratio": "118/137",
+    "sensitivity_ci_95": [
+      0.7935,
+      0.9094
+    ],
+    "specificity": 0.9476,
+    "specificity_ratio": "217/229",
+    "specificity_ci_95": [
+      0.9107,
+      0.9698
+    ]
+  },
+  "vision_threatening_dr": {
+    "definition": "grade >= 3",
+    "sensitivity": 0.62,
+    "sensitivity_ratio": "31/50",
+    "sensitivity_ci_95": [
+      0.4815,
+      0.7414
+    ]
+  },
+  "latency_ms_per_image": 428.57,
+  "total_runtime_seconds": 156.86,
+  "source": "APTOS 2019 test set (test.csv labels, 366 PNGs in test_images)",
+  "note": "held-out test evaluation; see ground_truth_eval.md for leakage status"
+}

@@ -1,0 +1,66 @@
+{
+  "source": "eyeq-dataset-training.ipynb output",
+  "classes": [
+    "Good",
+    "Usable",
+    "Reject"
+  ],
+  "label_mapping_status": "inferred",
+  "split_sizes": {
+    "train": 19999,
+    "val": 4282,
+    "test": 4283
+  },
+  "class_counts": {
+    "train": {
+      "Good": 11837,
+      "Usable": 4469,
+      "Reject": 3848
+    },
+    "val": {
+      "Good": 2514,
+      "Usable": 979,
+      "Reject": 825
+    },
+    "test": {
+      "Good": 2467,
+      "Usable": 986,
+      "Reject": 867
+    }
+  },
+  "selected_checkpoint": {
+    "file": "vista_epoch_11.pth",
+    "epoch": 11,
+    "val_accuracy": 90.00467071461934
+  },
+  "validation": {
+    "epoch_11": {
+      "accuracy": 0.9000,
+      "precision_weighted": 0.8985,
+      "recall_weighted": 0.9000,
+      "f1_weighted": 0.8991,
+      "val_loss": 0.2675,
+      "train_accuracy": 0.9175
+    }
+  },
+  "other_epochs": {
+    "epoch_12": {
+      "accuracy": 0.8916,
+      "precision_weighted": 0.8968,
+      "recall_weighted": 0.8916,
+      "f1_weighted": 0.8922,
+      "val_loss": 0.2756
+    },
+    "epoch_13": {
+      "accuracy": 0.8893,
+      "precision_weighted": 0.8892,
+      "recall_weighted": 0.8893,
+      "f1_weighted": 0.8867,
+      "val_loss": 0.2857
+    }
+  },
+  "test_metrics": null,
+  "reject_recall": null,
+  "false_reject_rate": null,
+  "note": "validation results from a random split of pooled EyeQ; not comparable to published official-split results; test-set evaluation not yet run"
+}

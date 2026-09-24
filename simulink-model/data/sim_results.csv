@@ -1,0 +1,22 @@
+# ==============================================================================
+# DR Screening Workflow Simulation Results (SIH-SIMULINK-003)
+# Single-source parameters: simulink-model/scripts/screening_params.m
+# Status labels: MEASURED, PROGRAM TARGET, PLACEHOLDER
+# Gate Ideal Assumed: true
+# ==============================================================================
+Metric,Value,Unit,Status,Notes
+annual_target_patients,100000,patients/yr,PROGRAM TARGET,Official screening requirement
+sustainable_annual_patients,117446,patients/yr,SIMULATED,Maximum sustainable volume without queue divergence
+bottleneck_stage,Capture Stations,text,SIMULATED,Stage limiting program capacity
+gate_is_ideal,true,boolean,PLACEHOLDER,True until EyeQ test-set evaluation completed
+recapture_rate,0.2252,fraction,SIMULATED,Ratio of recaptures to incoming patients
+expected_missed_referable_cases,2774,cases/yr,MEASURED,annual_patients * prevalence * (1 - sens)
+expected_false_referrals,4192,cases/yr,MEASURED,annual_patients * (1 - prevalence) * (1 - spec)
+
+# Per-Stage Detailed Performance
+Stage,Resource_Count,Service_Time_s,Utilization_Fraction,Mean_Queue_Patients,Mean_Wait_min,Status
+Capture_Stations,4,240.0,0.8501,36.84,53.05,PLACEHOLDER
+Quality_Gate,1,10.0,0.1417,0.00,0.17,PLACEHOLDER
+AI_Grading,1,0.6,0.0069,0.00,0.08,PLACEHOLDER
+Ophthalmologist_Validation,2,30.0,0.0368,0.00,0.00,PROGRAM TARGET
+Ophthalmologist_Manual_Review,2,60.0,0.0023,0.00,0.00,PLACEHOLDER
